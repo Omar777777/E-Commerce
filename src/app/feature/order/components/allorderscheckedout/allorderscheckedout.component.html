@@ -1,0 +1,41 @@
+<section class="container my-30 mx-auto bg-mylight p-10">
+
+    <h1 class="text-4xl font-bold mb-1">All Checked Out Orders</h1>
+
+
+
+    @for (order of AllOrders; track $index) {
+        <div class=" border-b-1 border-b-mycolor pb-7">
+        @for (item of order.cartItems; track $index) {
+
+            <div class="grid grid-cols-12 mt-7">
+                        <div class="col-span-2 mr-4">
+                            <img [src]="item.product.imageCover" alt="Cart Items Photo" class="w-full">
+                        </div>
+                        <div class="col-span-10 my-auto flex justify-between">
+                            <div>
+                                <h4 class="font-bold text-xl">{{item.product.title}}</h4>
+                                <span class="text-mycolor block mt-2">Price : {{item.price}}</span>
+                            </div>
+                            <div>
+                                <button 
+                                    class="p-3 bg-gray-400 text-white  rounded mr-2 ">+</button>
+                                <span class="bg-mylight text-xl font-medium">{{item.count}}</span>
+                                <button  
+                                    class="p-3 bg-gray-400 text-white  rounded ml-2 ">-</button>
+                    
+                            </div>
+                    
+                        </div>
+                    </div>
+
+        }
+        </div>
+    }
+
+
+      
+    
+
+
+</section>

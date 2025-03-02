@@ -1,0 +1,31 @@
+<section>
+    <div class="container mx-auto">
+
+        <div class="text-center">
+            <h1 class="text-4xl font-bold text-mycolor mt-7">All Categories</h1>
+
+            <div class="grid sm:grid-cols-2 md:grid-cols-4  p-6 gap-6 mt-7">
+
+                @for (category of allcategory.data; track $index) {
+
+                    <app-category-card (categoryId)="getCategoryId($event.categoryId,$event.categoryName)" [category]="category"></app-category-card>
+
+                }
+
+            </div>
+
+            <h6 class="text-5xl font-extrabold text-center mt-4">{{categoryName}}</h6>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3  p-6 gap-6 mt-7">
+                
+            
+                @for (subCategories of subCategory.data; track $index) {
+            
+                <app-sub-category [subCategories]="subCategories"></app-sub-category>
+            
+                }
+            
+            </div>
+
+        </div>
+    </div>
+</section>

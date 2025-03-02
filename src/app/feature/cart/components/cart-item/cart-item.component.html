@@ -1,0 +1,19 @@
+<div class="grid grid-cols-12 mt-7">
+    <div class="col-span-2 mr-4">
+        <img [src]="cardItems.product.imageCover" alt="Cart Items Photo" class="w-full">
+    </div>
+    <div class="col-span-10 my-auto flex justify-between">
+        <div>
+            <h4 class="font-bold text-xl">{{cardItems.product.title}}</h4>
+            <span class="text-mycolor block mt-2">Price : {{cardItems.price}}</span>
+            <button (click)="removeItem(cardItems.product._id)" class="text-red-800 cursor-pointer rounded p-3 bg-emerald-50 mt-2"><i class="fa-solid fa-trash-can"></i>Remove</button>
+       </div>
+       <div>
+        <button (click)="updateQuty(cardItems.product._id,cardItems.count+1)" class="p-3 bg-mycolor text-white hover:bg-emerald-400 rounded mr-2 cursor-pointer">+</button>
+        <span class="bg-mylight text-xl font-medium">{{cardItems.count}}</span>
+        <button (click)="updateQuty(cardItems.product._id,cardItems.count-1)" class="p-3 bg-mycolor text-white hover:bg-emerald-400 rounded ml-2 cursor-pointer">-</button>
+
+       </div>
+      
+    </div>
+</div>

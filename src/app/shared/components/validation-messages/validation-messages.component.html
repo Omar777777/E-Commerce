@@ -1,0 +1,29 @@
+@if (controls.errors && controls.touched) {
+<div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+    <div>
+        <ul class="mt-1.5 list-disc list-inside">
+            @if (controls.getError('required')) {
+            <li>Input is required</li>
+            }
+            @if (controls.getError('minlength')) {
+            <li>name min length is 2</li>
+            }
+            @if (controls.getError('maxlength')) {
+            <li>name max length is 20</li>
+            }
+            @if (controls.getError('email')) {
+            <li>email pattern is inavalid</li>
+            }
+
+            @if (controls.getError('pattern')) {
+            <li>At least one upper case English letter</li>
+            <li>At least one lower case English letter</li>
+            <li>At least one digit</li>
+            <li>At least one special character</li>
+            <li>Minimum eight in length</li>
+            }
+        </ul>
+    </div>
+</div>
+
+}

@@ -1,0 +1,19 @@
+@if(isloading){
+
+    <section class="container my-30 mx-auto bg-mylight p-10">
+
+        <h1 class="text-4xl font-bold mb-1">Shop Cart</h1>
+        <p class="text-mycolor">Total Cart Price : {{cartDetailes.data.totalCartPrice}} EGP</p>
+    
+        @for (item of cartDetailes.data.products; track $index) {
+        <app-cart-item (updateQty)="updateItemQuantity($event.productId,$event.newCount)" (removeId)="removeItemFromCart($event)" [cardItems]="item"></app-cart-item>
+        }
+<div class="flex justify-between mt-7">
+    <button routerLink="/product" class="w-50 h-15 rounded cursor-pointer bg-mycolor">Continue Shopping</button>
+    <button [routerLink]="['/checkout',cartDetailes.cartId]" class="h-15 w-50 rounded cursor-pointer bg-black text-white">CheckOut : {{cartDetailes.data.totalCartPrice}} EGP</button>
+
+</div>
+       
+    </section>
+}
+
