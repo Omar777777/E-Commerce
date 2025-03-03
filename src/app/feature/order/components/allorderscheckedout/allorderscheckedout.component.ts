@@ -30,6 +30,8 @@ export class AllorderscheckedoutComponent {
         this.getAllOrders()        
         }
         
+      }, error: () => {
+        this.authService.logout()
       }
     })
   }
