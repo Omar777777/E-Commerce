@@ -13,7 +13,7 @@ import { globalloadingInterceptor } from './core/interceptores/globalloading.int
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes),
+    provideRouter(routes,withHashLocation()),
     provideClientHydration(withEventReplay()),
     provideHttpClient(withFetch(),withInterceptors([addtokenInterceptor,globalloadingInterceptor])),
     importProvidersFrom(BrowserAnimationsModule,NgxSpinnerModule),
