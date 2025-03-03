@@ -13,7 +13,7 @@ export class OrderService {
   private readonly authService = inject(AuthService)
 
   getShippingInfo(cartId: string | null, shippingAddress: { details: string, phone: number, city: string }): Observable<any> {
-   const returnurl = "?url=https://e-commerce-kappa-ten-75.vercel.app/#"
+   const returnurl = "?url=https://e-commerce-kappa-ten-75.vercel.app"
     return this.httpClient.post(enviroments.baseUrl + `orders/checkout-session/${cartId}` + returnurl,
       {
       shippingAddress:shippingAddress
